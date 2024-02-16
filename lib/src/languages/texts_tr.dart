@@ -1,0 +1,27 @@
+part of '../functions/get_current_texts.dart';
+
+TimePassedTextsModel _textsTr = TimePassedTextsModel(
+  yearLong: "yıl",
+  yearsLong: "yıl",
+  monthLong: "ay",
+  monthsLong: "ay",
+  weekLong: "hafta",
+  weeksLong: "hafta",
+  dayLong: "gün",
+  daysLong: "gün",
+  hourLong: "saat",
+  hoursLong: "saat",
+  minuteLong: "dakika",
+  minutesLong: "dakika",
+  secondLong: "saniye",
+  secondsLong: "saniye",
+  yearShort: "y",
+  monthShort: "ay",
+  weekShort: "h",
+  dayShort: "gün",
+  hourShort: "sa",
+  minuteShort: "dk",
+  secondShort: "sn",
+  now: "şimdi",
+  ago: "önce",
+);

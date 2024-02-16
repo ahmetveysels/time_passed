@@ -1,0 +1,27 @@
+part of '../functions/get_current_texts.dart';
+
+TimePassedTextsModel _textsHi = TimePassedTextsModel(
+  yearLong: "साल",
+  yearsLong: "साल",
+  monthLong: "महीना",
+  monthsLong: "महीने",
+  weekLong: "हफ्ता",
+  weeksLong: "हफ्ते",
+  dayLong: "दिन",
+  daysLong: "दिन",
+  hourLong: "घंटा",
+  hoursLong: "घंटे",
+  minuteLong: "मिनट",
+  minutesLong: "मिनट",
+  secondLong: "सेकंड",
+  secondsLong: "सेकंड",
+  yearShort: "सा",
+  monthShort: "मा",
+  weekShort: "ह",
+  dayShort: "दि",
+  hourShort: "घ",
+  minuteShort: "मि",
+  secondShort: "से",
+  now: "अब",
+  ago: "पहले",
+);

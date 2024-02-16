@@ -1,0 +1,27 @@
+part of '../functions/get_current_texts.dart';
+
+TimePassedTextsModel _textsZh = TimePassedTextsModel(
+  yearLong: "年",
+  yearsLong: "年",
+  monthLong: "月",
+  monthsLong: "月",
+  weekLong: "周",
+  weeksLong: "周",
+  dayLong: "天",
+  daysLong: "天",
+  hourLong: "小时",
+  hoursLong: "小时",
+  minuteLong: "分钟",
+  minutesLong: "分钟",
+  secondLong: "秒",
+  secondsLong: "秒",
+  yearShort: "年",
+  monthShort: "月",
+  weekShort: "周",
+  dayShort: "天",
+  hourShort: "小时",
+  minuteShort: "分钟",
+  secondShort: "秒",
+  now: "现在",
+  ago: "前",
+);

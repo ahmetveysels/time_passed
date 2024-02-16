@@ -1,0 +1,27 @@
+part of '../functions/get_current_texts.dart';
+
+TimePassedTextsModel _textsEs = TimePassedTextsModel(
+  yearLong: "año",
+  yearsLong: "años",
+  monthLong: "mes",
+  monthsLong: "meses",
+  weekLong: "semana",
+  weeksLong: "semanas",
+  dayLong: "día",
+  daysLong: "días",
+  hourLong: "hora",
+  hoursLong: "horas",
+  minuteLong: "minuto",
+  minutesLong: "minutos",
+  secondLong: "segundo",
+  secondsLong: "segundos",
+  yearShort: "a",
+  monthShort: "m",
+  weekShort: "s",
+  dayShort: "d",
+  hourShort: "h",
+  minuteShort: "min",
+  secondShort: "s",
+  now: "ahora",
+  ago: "hace",
+);
