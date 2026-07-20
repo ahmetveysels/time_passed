@@ -58,7 +58,15 @@ String getTimePassed(
     int minutes = (dur.inMinutes % 60).toInt();
     int seconds = (dur.inSeconds % 60).toInt();
 
-    Map<String, int> diff = {"y": years, "m": months, "w": weeks, "d": rdays, "h": hours, "i": minutes, "s": seconds};
+    Map<String, int> diff = {
+      "y": years,
+      "m": months,
+      "w": weeks,
+      "d": rdays,
+      "h": hours,
+      "i": minutes,
+      "s": seconds
+    };
 
     String strYear = diff["y"] == null ? "0" : diff["y"].toString();
     String strMonth = diff["m"] == null ? "0" : diff["m"].toString();
@@ -148,7 +156,13 @@ String getTimePassed(
       strSecond += " ${currentText.secondsLong}";
     }
 
-    if (strYear.isEmpty && strMonth.isEmpty && strWeek.isEmpty && strDay.isEmpty && strHour.isEmpty && strMinute.isEmpty && seconds < 50) {
+    if (strYear.isEmpty &&
+        strMonth.isEmpty &&
+        strWeek.isEmpty &&
+        strDay.isEmpty &&
+        strHour.isEmpty &&
+        strMinute.isEmpty &&
+        seconds < 50) {
       if (full) {
         strLastText = currentText.ago;
       } else {
@@ -162,7 +176,8 @@ String getTimePassed(
     String returnedText = "";
 
     if (full) {
-      returnedText = "$strYear $strMonth $strWeek $strDay $strHour $strMinute $strSecond $strLastText ";
+      returnedText =
+          "$strYear $strMonth $strWeek $strDay $strHour $strMinute $strSecond $strLastText ";
     } else {
       if (strYear.isNotEmpty) {
         returnedText = strYear;
