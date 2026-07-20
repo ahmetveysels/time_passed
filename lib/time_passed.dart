@@ -20,14 +20,18 @@ import 'package:time_passed/src/model/time_passed_model.dart';
 ///
 /// The [customTexts] parameter is optional. If it is set, the function returns the time passed since the given date time using the given custom texts.
 
-String getTimePassed(DateTime dateTime,
-    {String? lang,
-    PassedLimitModel? passedLimit,
-    bool full = false,
-    bool shortType = false,
-    TimePassedTextsModel? customTexts}) {
+String getTimePassed(
+  DateTime dateTime, {
+  String? lang,
+  PassedLimitModel? passedLimit,
+  bool full = false,
+  bool shortType = false,
+  TimePassedTextsModel? customTexts,
+  DateTime? lastDateTime,
+}) {
   try {
-    Duration diffDate = DateTime.now().difference(dateTime);
+    DateTime nowDate = lastDateTime ?? DateTime.now();
+    Duration diffDate = nowDate.difference(dateTime);
     if (passedLimit != null) {
       if (diffDate.inSeconds > passedLimit.duration.inSeconds) {
         if (passedLimit.full) {
@@ -42,7 +46,7 @@ String getTimePassed(DateTime dateTime,
     // print("lang2: $lang2");
     TimePassedTextsModel currentText = customTexts ?? getCurrentTexts(lang2);
 
-    DateTime now = DateTime.now();
+    DateTime now = nowDate;
     DateTime ago = dateTime;
     Duration dur = now.difference(ago);
     int days = dur.inDays;
@@ -54,15 +58,7 @@ String getTimePassed(DateTime dateTime,
     int minutes = (dur.inMinutes % 60).toInt();
     int seconds = (dur.inSeconds % 60).toInt();
 
-    Map<String, int> diff = {
-      "y": years,
-      "m": months,
-      "w": weeks,
-      "d": rdays,
-      "h": hours,
-      "i": minutes,
-      "s": seconds
-    };
+    Map<String, int> diff = {"y": years, "m": months, "w": weeks, "d": rdays, "h": hours, "i": minutes, "s": seconds};
 
     String strYear = diff["y"] == null ? "0" : diff["y"].toString();
     String strMonth = diff["m"] == null ? "0" : diff["m"].toString();
@@ -152,13 +148,7 @@ String getTimePassed(DateTime dateTime,
       strSecond += " ${currentText.secondsLong}";
     }
 
-    if (strYear.isEmpty &&
-        strMonth.isEmpty &&
-        strWeek.isEmpty &&
-        strDay.isEmpty &&
-        strHour.isEmpty &&
-        strMinute.isEmpty &&
-        seconds < 50) {
+    if (strYear.isEmpty && strMonth.isEmpty && strWeek.isEmpty && strDay.isEmpty && strHour.isEmpty && strMinute.isEmpty && seconds < 50) {
       if (full) {
         strLastText = currentText.ago;
       } else {
@@ -172,8 +162,7 @@ String getTimePassed(DateTime dateTime,
     String returnedText = "";
 
     if (full) {
-      returnedText =
-          "$strYear $strMonth $strWeek $strDay $strHour $strMinute $strSecond $strLastText ";
+      returnedText = "$strYear $strMonth $strWeek $strDay $strHour $strMinute $strSecond $strLastText ";
     } else {
       if (strYear.isNotEmpty) {
         returnedText = strYear;
