@@ -1,6 +1,6 @@
 name: time_passed
 description: This function returns the time passed since the given date time.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/ahmetveysels/
 repository: https://github.com/ahmetveysels/time_passed
 documentation: https://github.com/ahmetveysels/time_passed
